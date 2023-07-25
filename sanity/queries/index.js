@@ -4,9 +4,17 @@ import { groq } from "next-sanity";
 
 const client = createClient(clientconfig);
 
-export function getContent() {
+export function getHome() {
   return client.fetch(groq`
-      *[_type == "test"] {
+      *[_type == "home"] {
+        title
+      }
+    `);
+}
+
+export function getAbout() {
+  return client.fetch(groq`
+      *[_type == "about"] {
         title
       }
     `);
