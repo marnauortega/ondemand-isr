@@ -1,7 +1,20 @@
 export const schemaTypes = [
   {
-    name: "test",
-    title: "Test",
+    name: "home",
+    title: "Home",
+    type: "document",
+    fields: [
+      {
+        name: "title",
+        title: "Title",
+        type: "string",
+        validation: (Rule) => Rule.required(),
+      },
+    ],
+  },
+  {
+    name: "about",
+    title: "About",
     type: "document",
     fields: [
       {
