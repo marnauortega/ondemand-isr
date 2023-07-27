@@ -1,7 +1,9 @@
 import { getAbout } from "@/sanity/queries";
 import Link from "next/link";
 
-export default async function Home() {
+export const dynamic = 60;
+
+export default async function About() {
   const [{ title }] = await getAbout();
 
   return (
