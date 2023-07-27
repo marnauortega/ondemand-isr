@@ -1,7 +1,7 @@
 import { getAbout } from "@/sanity/queries";
 import Link from "next/link";
 
-export const dynamic = 10;
+export const revalidate = 10;
 
 export default async function About() {
   const [{ title }] = await getAbout();
