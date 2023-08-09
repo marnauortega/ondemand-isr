@@ -15,7 +15,8 @@ export function getHome() {
 export function getAbout() {
   return client.fetch(groq`
       *[_type == "about"] {
-        title
+        title,
+        image
       }
     `);
 }
