@@ -4,23 +4,23 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import clientconfig from "@/sanity/clientconfig";
 
-export const revalidate = 10;
+export const revalidate = 60;
 
-const builder = imageUrlBuilder(clientconfig);
+// const builder = imageUrlBuilder(clientconfig);
 
-function urlFor(source) {
-  return builder.image(source);
-}
+// function urlFor(source) {
+//   return builder.image(source);
+// }
 
 export default async function About() {
-  const [{ title, image }] = await getAbout();
+  const [{ title }] = await getAbout();
 
   return (
     <div className="content about">
       <div className="title">About</div>
       <Link href="/">Go to Home</Link>
       <div className="text">{title}</div>
-      <Image src={urlFor(image.asset._ref).url()} width={300} height={200} alt="" />
+      <div className="text">{Math.random()}</div>
     </div>
   );
 }

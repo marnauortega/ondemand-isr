@@ -13,10 +13,13 @@ export function getHome() {
 }
 
 export function getAbout() {
-  return client.fetch(groq`
+  return client.fetch(
+    groq`
       *[_type == "about"] {
         title,
         image
       }
-    `);
+    `,
+    { next: { revalidate: 60 } }
+  );
 }
